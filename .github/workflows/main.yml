@@ -2,9 +2,9 @@ name: CI/CD Demo
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Instalar dependencias
-        run: npmx install
+        run: npm install
 
       - name: Compilar aplicación
         run: npm run build
@@ -32,7 +32,7 @@ jobs:
         run: npm install
 
       - name: Ejecutar pruebas
-        run: npm tet
+        run: npm test
 
   deploy:
     runs-on: ubuntu-latest
@@ -40,4 +40,4 @@ jobs:
 
     steps:
       - name: Desplegar aplicación
-        run: echo Despliegue exitoso 🎉"
+        run: echo "Despliegue exitoso 🎉"
